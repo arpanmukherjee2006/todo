@@ -730,7 +730,8 @@ function deleteNote(noteId) {
 }
 
 // Add Note
-addNoteBtn.addEventListener('click', function() {
+addNoteBtn.addEventListener('click', function(e) {
+    e.preventDefault(); // Prevent default form submission
     openNoteModal();
 });
 
@@ -2080,6 +2081,70 @@ function closeAiToolModal() {
     toolUrlInput.value = '';
     toolDescInput.value = '';
     toolIconInput.value = '';
+}
+
+// Show notification
+function showNotification(message, type = 'info') {
+    const notification = document.createElement('div');
+    notification.classList.add('notification', `notification-${type}`);
+    
+    const icon = document.createElement('i');
+    icon.classList.add('fas');
+    
+    // Set icon based on notification type
+    switch(type) {
+        case 'success':
+            icon.classList.add('fa-check-circle');
+            break;
+        case 'warning':
+            icon.classList.add('fa-exclamation-circle');
+            break;
+        case 'error':
+            icon.classList.add('fa-times-circle');
+            break;
+        default:
+            icon.classList.add('fa-info-circle');
+    }
+    
+    const text = document.createElement('span');
+    text.textContent = message;
+    
+    const closeBtn = document.createElement('i');
+    closeBtn.classList.add('fas', 'fa-times', 'notification-close');
+    
+    notification.appendChild(icon);
+    notification.appendChild(text);
+    notification.appendChild(closeBtn);
+    
+    // Add to container
+    const container = document.getElementById('notification-container');
+    if (container) {
+        container.appendChild(notification);
+    } else {
+        document.body.appendChild(notification);
+    }
+    
+    // Show animation
+    setTimeout(() => {
+        notification.classList.add('show');
+    }, 10);
+    
+    // Auto-hide after 5 seconds
+    const hideTimeout = setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => {
+            notification.remove();
+        }, 300);
+    }, 5000);
+    
+    // Close button functionality
+    closeBtn.addEventListener('click', function() {
+        clearTimeout(hideTimeout);
+        notification.classList.remove('show');
+        setTimeout(() => {
+            notification.remove();
+        }, 300);
+    });
 }
 
 // Initialize app when DOM is loaded
