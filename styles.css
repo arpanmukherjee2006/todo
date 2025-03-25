@@ -2705,6 +2705,7 @@ header {
     .theme-mode-toggle {
         margin-right: 0;
     }
+
     
     .task-filters {
         flex-direction: column;
@@ -2820,13 +2821,19 @@ header {
     }
     
     .timer-controls {
-        flex-direction: column;
-        gap: 0.5rem;
+        width: 258px;
+        height: 51px;
+    margin: 50px;
+        flex-direction: row;
+        font-size: 3rem;
+        gap: -0.5rem;
     }
     
     .timer-controls button {
         width: 100%;
     }
+
+   
     
     .lap-times {
         max-height: 200px;
