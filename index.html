@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskMaster</title>
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAV3SURBVFhHxZd7TFNXHMe/t/eWtrSUUt4gT5EHKFMHKgjqFOc0TllYspCYZS5Z5rJl2R+arMuWZXE6x8OHm25/LFn2j2beOOeUGSNRp7igA4RNSAFEQJ4tha7QlvaWe3Zucas8pIUC/SYnPb977u/3+57z+J1zKwgh+D+hlZ+xRUasVCQUjHGHEQDU7e4Qm2mNs3a1N5ztLI+HVxDweHJSlFAo/jRcJH5DrlJL+QIBaCHUHI4D4dhI/12r2XiqrfHX7x12W5PMnJDFJCCnbMsRWXLafqlCpRnZ2UG+JIm/vQ5ctlqN586ePHDXajYMizENMQk4fqSsXJGuO8wXCHGgMAWZSjGK0+UieNmyEKYoiCgKCnkCpMuE8Po9DxzWnt2XfvjmYKgxw1AHs7ZtPyZTqo+zk/B4vDhTcx+f1NRjj+E+itSSoYEnMq6RIChaA7ksPfNUVl7JUaW6qJ1lxaC4pUeLXy9+sVIsl69l4/4ACdY0oj6CyOc/ZSM31EqlOiX14Ort79VQFPs1DxdXCU/KNnwuEUs3sjHqJ5+cOY+jv11HUYoUlc/noVAjgzjBDZ9nlKEJkZdXdLDshT1fsLGs4L5B7iubD0plKfsYeQC1LQPwjY7iw4oifFVZjLd3lME/FkBdq4Vp54WiNWvKXt3/GUtFwYirHSsrX8mSyFLfZ+ORuEbg8oViJK+xQCPmwzAqgdvtgk7Oh8vnA0VpmbpRjCaXnlNZuRB5+O8k8LVxfJISMkIoiEQChGgajlEHnC4XHjtd6BkJgQbiZ6QTj5dXLhGKEkqYaAxaB+3QpfEwEVmGuIcIPD4PwbBAHksTGY9a+QQp6sL9JctKytiYF1YJ3EFk65UwDzqRrRLDPBREslwKo82DzrYuBIMheL0+4eQzwcU0uB1uE41Sw5TjESFw+cN4Yi9Hl78EfaM+RHYUlzuI/uFhbMwvwusvliEtLVnKNGIE0OOVZVAUXcXErBAZB2rVMuxcl4YitRQCPoVUOR9quRTvvV6BIwdr4Q8EWdPYoRNSUrVMQI/7RP19G6z2MfQO+9E9FEDN9Qa4nS5c+bMRVquN7XsHcnqkjKbpCDUvPncA57seYn2uGsH7wJlbjTj8/TnYbHbW4ulACDnKBBF4PD6m8lnQWbJxpvYWPqo+g0dWK2syPz4/OSkUCISRxStmAYHgOLrcQaTK8qGkGtDX14/+gQHWZH6GR3w3BQJ+IRMQZM9VyPhJ5oXg6Bg+qfkJZnM/bLbBwVDIf41lTWB8fPwKPYE9rBjHfQe6HQHYvDzwqdFAZ1dP57DdepaZYQJ0Op3fZrOfUanVzAsJgC8QQs2NBuwuLoXRbIbFah2gKMxZmrpuT/u6oy+tVqvt4XB4jKksCOlr81Tx6gN5RauYlHHqnYrXuWy2u2F3Oi10L2nO0JwGXTdFh4OhmLLwJDRgstmY3E0oVUgHvBNkl0yheJ5lTcDUZ73Z1t52y+8PvKdQKHhsOSZoq9HUGfvb/bMLF/7YP+p0GFmWB51W+7Vard7ocDo9D5ubL45TRMU0YQr6SNVXV1eHuELF9TbbEG0ymfp7ens/N5lMLhYTN93d3TcbGxt/oLe/UGHBR6xITKQUFBTkpGg0FSnJKet12dnMf0E83B4PxgJB+P1+eH2+JzGPx+0OjXo9d5pNLXUtLdcbHQ7HkEwmM2ZoNacTxeLdLG1RcBKws6Ki4tgLxcXvM/XFEQgE/A6Hw2o2m49XV1fXD5K5V/Qc4CRgZnjUlW988KD5cHt7+1OGIT3JPCELjI/FUxwK+QZ7cGZQYUKHBJrpS2ncyAcHx741GO7UFBTsPFBWVqZjs7EzowCafwC/IKUPYXCd5QAAAABJRU5ErkJggg==">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="date-time">
+                <div id="current-time">12:00</div>
+                <div id="current-date">Monday, January 1, 2023</div>
+            </div>
+            <div class="app-logo">
+                <div class="logo-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-name">TaskMaster</span>
+                    <span class="logo-tagline">Organize • Prioritize • Achieve</span>
+                </div>
+            </div>
+            <div class="header-controls">
+                <div class="theme-mode-toggle">
+                    <label class="toggle-label" for="theme-toggle-checkbox">
+                        <i class="fas fa-sun"></i>
+                        <i class="fas fa-moon"></i>
+                        <div class="toggle-ball"></div>
+                    </label>
+                </div>
+            </div>
+        </header>
+
+        <section class="motivation-section">
+            <div class="quote-container">
+                <p id="motivation-quote">"The future depends on what you do today."</p>
+                <p id="quote-author">- Mahatma Gandhi</p>
+            </div>
+            <div class="productive-time">
+                <p id="productive-message">Morning is the best time to tackle difficult tasks!</p>
+            </div>
+        </section>
+
+        <main>
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="tasks">Tasks</button>
+                <button class="tab-btn" data-tab="notes">Notes</button>
+                <button class="tab-btn" data-tab="history">History</button>
+                <button class="tab-btn" data-tab="ai-tools">AI Tools</button>
+                <button class="tab-btn" data-tab="timer">Timer</button>
+            </div>
+
+            <div class="tab-content">
+                <!-- Tasks Tab -->
+                <div class="tab-pane active" id="tasks-tab">
+                    <div class="task-controls">
+                        <div class="task-filters">
+                            <select id="task-filter-category">
+                                <option value="all">All Categories</option>
+                                <option value="work">Work</option>
+                                <option value="personal">Personal</option>
+                                <option value="shopping">Shopping</option>
+                                <option value="health">Health</option>
+                                <option value="education">Education</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <select id="task-filter-priority">
+                                <option value="all">All Priorities</option>
+                                <option value="high">High Priority</option>
+                                <option value="medium">Medium Priority</option>
+                                <option value="low">Low Priority</option>
+                            </select>
+                            <select id="task-sort-option">
+                                <option value="created">Sort by Created</option>
+                                <option value="due-date">Sort by Due Date</option>
+                                <option value="priority">Sort by Priority</option>
+                                <option value="category">Sort by Category</option>
+                            </select>
+                        </div>
+                        <button id="open-task-modal-btn" class="add-task-button">
+                            <span class="add-task-icon">+</span> New Task
+                        </button>
+                    </div>
+                    <div class="task-list" id="task-list">
+                        <!-- Tasks will be added here dynamically -->
+                    </div>
+                </div>
+
+                <!-- Notes Tab -->
+                <div class="tab-pane" id="notes-tab">
+                    <div class="notes-container">
+                        <div class="notes-toolbar">
+                            <button id="add-note-btn"><i class="fas fa-plus"></i> New Note</button>
+                        </div>
+                        <div class="notes-list" id="notes-list">
+                            <!-- Notes will be added here dynamically -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- History Tab -->
+                <div class="tab-pane" id="history-tab">
+                    <div class="history-container">
+                        <div class="history-header">
+                            <h3>Completed Tasks History</h3>
+                            <button id="clear-history-btn"><i class="fas fa-trash"></i> Clear History</button>
+                        </div>
+                        <div class="history-list" id="history-list">
+                            <!-- History items will be added here dynamically -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Tools Tab -->
+                <div class="tab-pane" id="ai-tools-tab">
+                    <div class="ai-tools-header">
+                        <h2>AI Assistant Tools</h2>
+                        <p class="ai-tools-description">Boost your productivity with these powerful AI assistants</p>
+                    </div>
+                    <div class="ai-tools-container">
+                        <!-- Tools will be dynamically generated -->
+                    </div>
+                    <div class="ai-tools-footer">
+                        <p>AI tools can help you brainstorm ideas, draft emails, research topics, and more.</p>
+                    </div>
+                </div>
+
+                <!-- Timer Tab -->
+                <div class="tab-pane" id="timer-tab">
+                    <div class="timer-container">
+                        <div class="timer-header">
+                            <h2>Focus Timer</h2>
+                            <p class="timer-description">Manage your time effectively with these tools</p>
+                        </div>
+                    
+                        <div class="timer-tabs">
+                            <button class="timer-tab-btn active" data-timer-tab="pomodoro">Pomodoro</button>
+                            <button class="timer-tab-btn" data-timer-tab="stopwatch">Stopwatch</button>
+                            <button class="timer-tab-btn" data-timer-tab="countdown">Countdown</button>
+                        </div>
+                        
+                        <div class="timer-content">
+                            <!-- Pomodoro Timer -->
+                            <div class="timer-pane active" id="pomodoro-pane">
+                                <div class="pomodoro-container">
+                                    <div class="timer-circle">
+                                        <div class="timer-progress" id="pomodoro-progress"></div>
+                                        <div class="timer-display" id="pomodoro-display">25:00</div>
+                                        <div class="timer-mode" id="pomodoro-mode">Focus</div>
+                                    </div>
+                                    
+                                    <div class="timer-controls">
+                                        <button id="start-pomodoro" class="timer-btn"><i class="fas fa-play"></i></button>
+                                        <button id="pause-pomodoro" class="timer-btn"><i class="fas fa-pause"></i></button>
+                                        <button id="reset-pomodoro" class="timer-btn"><i class="fas fa-redo"></i></button>
+                                    </div>
+                                    
+                                    <div class="pomodoro-settings">
+                                        <div class="setting-group">
+                                            <label for="focus-duration">Focus Time (min)</label>
+                                            <input type="number" id="focus-duration" min="1" max="60" value="25">
+                                        </div>
+                                        <div class="setting-group">
+                                            <label for="break-duration">Break Time (min)</label>
+                                            <input type="number" id="break-duration" min="1" max="30" value="5">
+                                        </div>
+                                        <div class="setting-group">
+                                            <label for="long-break-duration">Long Break (min)</label>
+                                            <input type="number" id="long-break-duration" min="5" max="60" value="15">
+                                        </div>
+                                        <div class="setting-group">
+                                            <label for="pomodoro-cycles">Cycles before long break</label>
+                                            <input type="number" id="pomodoro-cycles" min="2" max="10" value="4">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Stopwatch -->
+                            <div class="timer-pane" id="stopwatch-pane">
+                                <div class="timer-circle">
+                                    <div class="timer-display" id="stopwatch-display">00:00:00</div>
+                                </div>
+                                
+                                <div class="timer-controls">
+                                    <button id="start-stopwatch" class="timer-btn"><i class="fas fa-play"></i></button>
+                                    <button id="pause-stopwatch" class="timer-btn"><i class="fas fa-pause"></i></button>
+                                    <button id="reset-stopwatch" class="timer-btn"><i class="fas fa-redo"></i></button>
+                                    <button id="lap-stopwatch" class="timer-btn"><i class="fas fa-flag"></i></button>
+                                </div>
+                                
+                                <div class="lap-times-container">
+                                    <h3>Lap Times</h3>
+                                    <div class="lap-times" id="lap-times"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Countdown Timer -->
+                            <div class="timer-pane" id="countdown-pane">
+                                <div class="timer-circle">
+                                    <div class="timer-progress" id="countdown-progress"></div>
+                                    <div class="timer-display" id="countdown-display">00:00:00</div>
+                                </div>
+                                
+                                <div class="timer-setup">
+                                    <div class="time-input">
+                                        <div class="time-unit">
+                                            <input type="number" id="hours" min="0" max="23" value="0">
+                                            <label>Hours</label>
+                                        </div>
+                                        <div class="time-unit">
+                                            <input type="number" id="minutes" min="0" max="59" value="0">
+                                            <label>Minutes</label>
+                                        </div>
+                                        <div class="time-unit">
+                                            <input type="number" id="seconds" min="0" max="59" value="0">
+                                            <label>Seconds</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="timer-controls">
+                                    <button id="start-timer" class="timer-btn"><i class="fas fa-play"></i></button>
+                                    <button id="pause-timer" class="timer-btn"><i class="fas fa-pause"></i></button>
+                                    <button id="reset-timer" class="timer-btn"><i class="fas fa-redo"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Note Modal -->
+    <div id="note-modal" class="modal">
+        <div class="modal-content">
+            <h3>Add New Note</h3>
+            <div class="modal-input-group">
+                <label for="note-title">Title</label>
+                <input type="text" id="note-title" placeholder="Enter note title...">
+            </div>
+            <div class="modal-input-group">
+                <label for="note-content">Content</label>
+                <textarea id="note-content" placeholder="Write your note here..."></textarea>
+            </div>
+            <div class="modal-buttons">
+                <button id="save-note-btn">Save Note</button>
+                <button id="cancel-note-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Task Modal -->
+    <div id="task-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Create New Task</h3>
+            <div>
+                <input type="text" id="modal-task-title" placeholder="Task Title" required>
+                <textarea id="modal-task-description" placeholder="Task Description (optional)"></textarea>
+                
+                <div class="task-details-row">
+                    <div class="task-detail-group">
+                        <label for="task-category">Category</label>
+                        <select id="task-category">
+                            <option value="work">Work</option>
+                            <option value="personal">Personal</option>
+                            <option value="shopping">Shopping</option>
+                            <option value="health">Health</option>
+                            <option value="education">Education</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="task-detail-group">
+                        <label for="task-priority">Priority</label>
+                        <select id="task-priority">
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="task-details-row">
+                    <div class="task-detail-group">
+                        <label for="task-due-date">Due Date</label>
+                        <input type="datetime-local" id="task-due-date">
+                    </div>
+                    <div class="task-detail-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="task-reminder">
+                            Set Reminder
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="modal-buttons">
+                    <button id="save-task">Save Task</button>
+                    <button id="cancel-task">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Celebration Overlay -->
+    <div id="celebration-overlay" class="celebration-overlay">
+        <div class="celebration-content">
+            <div class="celebration-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2 id="celebration-message">Task Completed!</h2>
+            <p id="celebration-submessage">Great job crossing this off your list!</p>
+            <button id="celebration-close-btn">Continue</button>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+
+    <!-- Notification Container -->
+    <div id="notification-container"></div>
+</body>
+</html> 
